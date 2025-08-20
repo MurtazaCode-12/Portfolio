@@ -1,0 +1,156 @@
+/* style.css */
+
+/* Custom Styles for the futuristic theme */
+body {
+    background-color: #0a0a1a;
+    color: #e0e0e0;
+    font-family: 'Rajdhani', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Custom font for headings */
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Neon glow effect for text and borders */
+.neon-text {
+    text-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff, 0 0 20px #00aaff, 0 0 40px #00aaff, 0 0 80px #00aaff;
+}
+.neon-border {
+    border-color: #00aaff;
+    box-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff inset;
+}
+.neon-button {
+    box-shadow: 0 0 5px #00aaff, 0 0 10px #00aaff, 0 0 15px #00aaff;
+    transition: all 0.3s ease-in-out;
+}
+.neon-button:hover {
+    box-shadow: 0 0 10px #00ddff, 0 0 20px #00ddff, 0 0 30px #00ddff;
+    transform: translateY(-2px);
+}
+
+/* Glassmorphism effect for cards */
+.glass-card {
+    background: rgba(10, 25, 47, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 170, 255, 0.3);
+    transition: all 0.3s ease;
+}
+.glass-card:hover:not(.no-hover) {
+    background: rgba(10, 25, 47, 0.7);
+    border: 1px solid rgba(0, 170, 255, 0.6);
+    transform: scale(1.03);
+}
+
+/* Animated background */
+#canvas-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Typing animation cursor */
+.typing-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1.2em;
+    background-color: #00aaff;
+    animation: blink 0.7s infinite;
+    margin-left: 5px;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Scroll-triggered animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Timeline styles */
+.timeline-item {
+    position: relative;
+    padding-left: 40px;
+    padding-bottom: 40px;
+}
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    width: 2px;
+    height: 100%;
+    background: rgba(0, 170, 255, 0.3);
+}
+.timeline-dot {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #0a0a1a;
+    border: 2px solid #00aaff;
+    box-shadow: 0 0 10px #00aaff;
+}
+
+/* AI Chatbot Styles */
+.ai-chat-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 40;
+}
+.chat-modal {
+    max-height: 80vh;
+}
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+.chat-messages::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.2);
+}
+.chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(0, 170, 255, 0.5);
+    border-radius: 4px;
+}
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 170, 255, 0.8);
+}
+.message {
+    max-width: 80%;
+}
+.message.user {
+    background: rgba(0, 100, 150, 0.7);
+    align-self: flex-end;
+}
+.message.ai {
+    background: rgba(20, 40, 70, 0.8);
+    align-self: flex-start;
+}
+.loader {
+    border: 4px solid rgba(0, 170, 255, 0.2);
+    border-left-color: #00aaff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
